@@ -24,7 +24,7 @@ var confirm_results=document.getElementById("confirm_results");
 
 var hasErrors = false;
 /*Checks to see if there is a first name entered*/
-var testfnameLen = name.length;
+/*Use a regular expression to check to see if there are no spaces and length of first name*/
 
 var firstnameRegex = /^[a-zA-Z]{3,15}$/;
 
@@ -44,6 +44,7 @@ console.log((name.value) + " bad");
 
 
 /*Checks to see if there is a last name entered*/
+/*Use regular expression to check length and to allow space in last name*/
 var lastnameRegex = /^[a-zA-Z ]{3,15}$/;
 
 if(lastnameRegex.test(lname.value)) {
@@ -63,6 +64,7 @@ console.log((lname.value) + " bad");
 
 
 /*Checks to make sure that email is properly formated with a period and @ symbol*/
+/*Use regular expression to check to see if the email address is formatted correctly*/
 var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9]+\.[A-Za-z]{3}$/;
 
 if ( emailRegex.test(email.value))
@@ -81,6 +83,7 @@ console.log((email.value) + " bad");
 
 
 /*Checks to see if the comment length is between 0 and 150 characters*/
+/*Use regular expression to check to see if there are any html surrounded by <>*/
 var commentRegex = /\<[^\>]*\>/gi;
 if (comments.value.length==0)
 {
@@ -97,6 +100,7 @@ hasErrors = true;
 else {
 err_comments.innerHTML = "";
 comments.className = "good";
+/*Use replace to remove the html from the comments before submitting the form*/
 comments.value = comments.value.replace(commentRegex,"");
 }
 /*Takes the good data entered and displays a confirmation page*/
