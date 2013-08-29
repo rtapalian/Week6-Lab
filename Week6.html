@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+
+
+
+<head>
+
+<title>Forms</title>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+
+
+<body>
+<header>
+<h1 class="headertitle">Contact Form</h1>
+<!--myform is the Entry form.  The data entered is sent to the Javascript page for processing.-->
+<form id="myform" name="myform" class="contentbox">
+
+<label for="int-name">First Name</label><input id="int-name" type="text" name="name" size="25" placeholder="John"/><span class="error" id="err_name"></span>
+
+<br/><br/>
+<label for="int-lname">Last Name</label><input id="int-lname" type="text" name="lname" size="25" placeholder="Smith"/><span class="error" id="err_lname"></span>
+<br/><br/>
+<label for="email">E-mail:</label> <input id="email" name="email" type="text" size="30" placeholder="sample@email.com" /> <span class="error" id="err_email"></span> <br /><br />
+<br/><br/>
+
+Comments:<br/>
+<textarea rows="15" cols="38" name="comments" id="int-comments"></textarea><span class="error" id="err_comments"></span>
+<br/><br/>
+
+
+<br/><br/>
+<!--The submit button sends the data after it is entered-->
+<input type="button" value="submit" onclick="submitForm();" />
+</form>
+<!--The confirmation page displays the data after it is validated-->
+<div id="confirmation" class="contentbox hide">
+	<h1>Confirmation</h1>
+	<div id="confirm_results">
+	</div>
+</div>
+
+	</header>
+<script type="text/javascript" src="scripts.js"></script>
+
+
+</body>
+</html>
